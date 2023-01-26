@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>calculator</title>
+    <style type="text/css">
+        body{
+    background: #efeff2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    background-color:darkolivegreen;
+}
+
+.calculator{
+    width: 300px;
+    height: 500px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+form input{
+    width: 270px;
+    height: 90px;
+    background-color: black;
+    border: none;
+    border-radius: 12px;
+    font-size: 2rem;
+    padding: 1rem;
+    color: white;
+    text-align: right;
+    pointer-events: none;
+
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+input{
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+    font-weight: 800;
+    border-radius: 50px;
+    cursor: pointer;
+    flex: 0 0 22%;
+    margin: 5px 0;
+    border: 1px solid black;
+}
+
+.btn-yello{
+    background-color:gray;
+}
+
+.btn-gray{
+    background-color:darkgray;
+}
+.btn-orrange{
+    background-color: orange;
+}
+/*over style part*/
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function press(num){
+    document.form.textView.value = document.form.textView.value +num;
+}
+
+function clean(num){
+    document.form.textView.value=num;
+}
+
+function equal(){
+    var exp = document.form.textView.value;
+
+    if(exp){
+        document.form.textView.value = eval(exp);
+    }
+    else{
+        document.form.textView.value="";
+    }
+}
+    </script>
+    <section class="calculator">
+
+        <form name="form">
+            <input type="text" class="screen" name="textView">
+        </form>
+
+        <div class="buttons">
+            <input type="button" class="btn-yello" onclick="clean(' ')" value="AC"></button>
+            <input type="button" class="btn-yello" onclick="press('-')" value="+/-"></button>
+            <input type="button" class="btn-yello" onclick="press('%')" value="%"></button>
+            <input type="button" class="btn-orrange" onclick="press('/')" value="/"></button><br>
+
+            <input type="button" class="btn-gray" onclick="press(7)" value="7"></button>
+            <input type="button" class="btn-gray" onclick="press(8)" value="8"></button>
+            <input type="button" class="btn-gray" onclick="press(9)" value="9"></button>
+            <input type="button" class="btn-orrange" onclick="press('*')" value="x"></button><br>
+
+            <input type="button" class="btn-gray" onclick="press(4)" value="4"></button>
+            <input type="button" class="btn-gray" onclick="press(5)" value="5"></button>
+            <input type="button" class="btn-gray" onclick="press(6)" value="6"></button>
+            <input type="button" class="btn-orrange" onclick="press('-')" value="-"></button><br>
+
+            <input type="button" class="btn-gray" onclick="press(1)" value="1"></button>
+            <input type="button" class="btn-gray" onclick="press(2)" value="2"></button>
+            <input type="button" class="btn-gray" onclick="press(3)" value="3"></button>
+            <input type="button" class="btn-orrange" onclick="press('+')" value="+"></button><br>
+
+            <input type="button" class="btn-gray" onclick="press('00')" value="00"></button>
+            <input type="button" class="btn-gray" onclick="press(0)" value="0"></button> 
+            <input type="button" class="btn-gray" onclick="press('.')" value="."></button>
+            <input type="button" class="btn-orrange" onclick="equal()" value="="></button>
+
+
+        </div>
+    </section>
+</body>
+</html>
